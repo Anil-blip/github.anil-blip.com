@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<title>Feedback</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/> 
+<link href="css/style.css" rel="stylesheet" type="text/css"/> 
+<script>
+        function validate() {
+            var result = "";
+            var email = document.getElementById("email").value;
+            var model = document.getElementById("model").value;
+            var no. = document.getElementById("no.").value;
+			var feed == document.getElementById("feed").value;
+            var dotIndex = email.lastIndexOf(".");
+            var atIndex = email.indexOf("@");
+            if (atIndex < 1 || dotIndex >= email.length - 2 || dotIndex - atIndex < 3)
+                result = "Please input valid email id\nThere should be at least 2 characters between '.' and '@'\nAlso there should be at least 3 characters after '.'";
+            if (Model.length >3 ||Model.length <15)
+                result += "\nModel should have minimum 3 characters and maximum 15 characters";
+            if (no. < 1 ||no. > 100)
+                result += "\nModel no. should be between 1 and 100";
+            if (result === "")
+                return true;
+            else {
+                alert(result);
+                return false;
+            }
+			
+			 if (feed.value == "")			 
+	    {
+            alert("Please select an option!");
+            return false;
+        }
+        return true;
+    }
+}
+    </script>
+</head> 
+<body>
+<div class="header">
+<img src="img.jpg" alt="header"></div>
+<div class="content-wrapper">
+<div class="container">
+<div class="nav">
+<a href="home.html">Home</a>
+<a href="pdct.html">Products</a>
+<a href="flip.html" class="active">Feedback</a></div>
+<div class="content">
+<h2 class="heading">Feedback Form</h2>
+<p>If you have a suggestion or any feedback for us</p>
+<form name="feedback" action="home.html" method="get" onsubmit="return validate()">
+        <label for="name">Name:</label>
+        <input type="text" placeholder="Enter your name" name="name" id="name" required>
+        <label for="email">Email:</label>
+        <input type="email" placeholder="Enter your email" name="email" id="email" required>
+        <label for="Model">Model Name:</label>
+        <input type="text" placeholder="Enter Product Name" name="Model" id="Model" required>
+        <label for="no.">Model No.:</label>
+        <input type="number" placeholder="Ex:Model 45" name="model" id="no" required>
+        <label for="option">Service:</label><br>
+<select id="feed">
+    <option value=""></option>
+    <option value="1">1star</option>
+    <option value="2">2star</option>
+    <option value="3">3star</option>
+	<option value="4">4star</option>
+    <option value="5">5star</option>
+</select><br><br>
+        <label for="Feedback">Feedback or Message:</label><br>
+        <textarea name="feedback" id="feedback" placeholder="Enter feedback" required></textarea>
+		
+        <input type="submit" id="btn">
+    </form>
+</div>
+<div class="footer">
+<h5>Maintanence and design by Anil</h5>
+<h5>Roll number : 11913021  Section:IT-A(1)</h5>
+<p>copyright &copy;2020</p>
+</div>
+</body>
+</html>
